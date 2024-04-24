@@ -1,0 +1,70 @@
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  Rafx2PluginBase.cpp
+  Rafx2Plugin.cpp
+  RackAFXDLL.cpp
+  fxobjects.cpp
+  pluginparameter.cpp
+  plugingui.cpp
+  plugincore.cpp
+  pluginbase.cpp
+  customviews.cpp
+  customcontrols.cpp
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\CustomControls\customcontrols.cpp(908,8): warning C4996: 'VSTGUI::CView::hitTest': Use the other hitTest method
+  vstgui_win32.cpp
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\vstgui4\vstgui\lib\platform\common\generictextedit.cpp(34,49): warning C4996: 'std::codecvt_utf8_utf16<VSTGUI::STB_CharT,1114111,(std::codecvt_mode)0>': warning STL4017: std::wbuffer_convert, std::wstring_convert, and the <codecvt> header (containing std::codecvt_mode, std::codecvt_utf8, std::codecvt_utf16, and std::codecvt_utf8_utf16) are deprecated in C++17. (The std::codecvt class template is NOT deprecated.) The C++ Standard doesn't provide equivalent non-deprecated functionality; consider using MultiByteToWideChar() and WideCharToMultiByte() from <Windows.h> instead. You can define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to suppress this warning.
+  (compiling source file '../../vstgui4/vstgui/vstgui_win32.cpp')
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\codecvt(442,39):
+  see declaration of 'std::codecvt_utf8_utf16'
+  
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\vstgui4\vstgui\lib\platform\common\generictextedit.cpp(34,28): warning C4996: 'std::wstring_convert<std::codecvt_utf8_utf16<VSTGUI::STB_CharT,1114111,(std::codecvt_mode)0>,VSTGUI::STB_CharT,std::allocator<char16_t>,std::allocator<char>>': warning STL4017: std::wbuffer_convert, std::wstring_convert, and the <codecvt> header (containing std::codecvt_mode, std::codecvt_utf8, std::codecvt_utf16, and std::codecvt_utf8_utf16) are deprecated in C++17. (The std::codecvt class template is NOT deprecated.) The C++ Standard doesn't provide equivalent non-deprecated functionality; consider using MultiByteToWideChar() and WideCharToMultiByte() from <Windows.h> instead. You can define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to suppress this warning.
+  (compiling source file '../../vstgui4/vstgui/vstgui_win32.cpp')
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xlocbuf(303,39):
+  see declaration of 'std::wstring_convert'
+  
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\vstgui4\vstgui\lib\platform\common\generictextedit.cpp(317,30): warning C4996: 'std::wstring_convert<std::codecvt_utf8_utf16<VSTGUI::STB_CharT,1114111,(std::codecvt_mode)0>,VSTGUI::STB_CharT,std::allocator<char16_t>,std::allocator<char>>::from_bytes': warning STL4017: std::wbuffer_convert, std::wstring_convert, and the <codecvt> header (containing std::codecvt_mode, std::codecvt_utf8, std::codecvt_utf16, and std::codecvt_utf8_utf16) are deprecated in C++17. (The std::codecvt class template is NOT deprecated.) The C++ Standard doesn't provide equivalent non-deprecated functionality; consider using MultiByteToWideChar() and WideCharToMultiByte() from <Windows.h> instead. You can define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to suppress this warning.
+  (compiling source file '../../vstgui4/vstgui/vstgui_win32.cpp')
+  
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\vstgui4\vstgui\lib\platform\common\generictextedit.cpp(537,28): warning C4996: 'std::wstring_convert<std::codecvt_utf8_utf16<VSTGUI::STB_CharT,1114111,(std::codecvt_mode)0>,VSTGUI::STB_CharT,std::allocator<char16_t>,std::allocator<char>>::to_bytes': warning STL4017: std::wbuffer_convert, std::wstring_convert, and the <codecvt> header (containing std::codecvt_mode, std::codecvt_utf8, std::codecvt_utf16, and std::codecvt_utf8_utf16) are deprecated in C++17. (The std::codecvt class template is NOT deprecated.) The C++ Standard doesn't provide equivalent non-deprecated functionality; consider using MultiByteToWideChar() and WideCharToMultiByte() from <Windows.h> instead. You can define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to suppress this warning.
+  (compiling source file '../../vstgui4/vstgui/vstgui_win32.cpp')
+  
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\vstgui4\vstgui\lib\platform\common\generictextedit.cpp(564,34): warning C4996: 'std::wstring_convert<std::codecvt_utf8_utf16<VSTGUI::STB_CharT,1114111,(std::codecvt_mode)0>,VSTGUI::STB_CharT,std::allocator<char16_t>,std::allocator<char>>::from_bytes': warning STL4017: std::wbuffer_convert, std::wstring_convert, and the <codecvt> header (containing std::codecvt_mode, std::codecvt_utf8, std::codecvt_utf16, and std::codecvt_utf8_utf16) are deprecated in C++17. (The std::codecvt class template is NOT deprecated.) The C++ Standard doesn't provide equivalent non-deprecated functionality; consider using MultiByteToWideChar() and WideCharToMultiByte() from <Windows.h> instead. You can define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to suppress this warning.
+  (compiling source file '../../vstgui4/vstgui/vstgui_win32.cpp')
+  
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\vstgui4\vstgui\lib\platform\common\generictextedit.cpp(604,31): warning C4996: 'std::wstring_convert<std::codecvt_utf8_utf16<VSTGUI::STB_CharT,1114111,(std::codecvt_mode)0>,VSTGUI::STB_CharT,std::allocator<char16_t>,std::allocator<char>>::from_bytes': warning STL4017: std::wbuffer_convert, std::wstring_convert, and the <codecvt> header (containing std::codecvt_mode, std::codecvt_utf8, std::codecvt_utf16, and std::codecvt_utf8_utf16) are deprecated in C++17. (The std::codecvt class template is NOT deprecated.) The C++ Standard doesn't provide equivalent non-deprecated functionality; consider using MultiByteToWideChar() and WideCharToMultiByte() from <Windows.h> instead. You can define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to suppress this warning.
+  (compiling source file '../../vstgui4/vstgui/vstgui_win32.cpp')
+  
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\vstgui4\vstgui\lib\platform\common\generictextedit.cpp(620,34): warning C4996: 'std::wstring_convert<std::codecvt_utf8_utf16<VSTGUI::STB_CharT,1114111,(std::codecvt_mode)0>,VSTGUI::STB_CharT,std::allocator<char16_t>,std::allocator<char>>::to_bytes': warning STL4017: std::wbuffer_convert, std::wstring_convert, and the <codecvt> header (containing std::codecvt_mode, std::codecvt_utf8, std::codecvt_utf16, and std::codecvt_utf8_utf16) are deprecated in C++17. (The std::codecvt class template is NOT deprecated.) The C++ Standard doesn't provide equivalent non-deprecated functionality; consider using MultiByteToWideChar() and WideCharToMultiByte() from <Windows.h> instead. You can define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to suppress this warning.
+  (compiling source file '../../vstgui4/vstgui/vstgui_win32.cpp')
+  
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\vstgui4\vstgui\lib\platform\common\generictextedit.cpp(622,25): warning C4996: 'std::wstring_convert<std::codecvt_utf8_utf16<VSTGUI::STB_CharT,1114111,(std::codecvt_mode)0>,VSTGUI::STB_CharT,std::allocator<char16_t>,std::allocator<char>>::to_bytes': warning STL4017: std::wbuffer_convert, std::wstring_convert, and the <codecvt> header (containing std::codecvt_mode, std::codecvt_utf8, std::codecvt_utf16, and std::codecvt_utf8_utf16) are deprecated in C++17. (The std::codecvt class template is NOT deprecated.) The C++ Standard doesn't provide equivalent non-deprecated functionality; consider using MultiByteToWideChar() and WideCharToMultiByte() from <Windows.h> instead. You can define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to suppress this warning.
+  (compiling source file '../../vstgui4/vstgui/vstgui_win32.cpp')
+  
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\vstgui4\vstgui\lib\platform\common\generictextedit.cpp(626,33): warning C4996: 'std::wstring_convert<std::codecvt_utf8_utf16<VSTGUI::STB_CharT,1114111,(std::codecvt_mode)0>,VSTGUI::STB_CharT,std::allocator<char16_t>,std::allocator<char>>::to_bytes': warning STL4017: std::wbuffer_convert, std::wstring_convert, and the <codecvt> header (containing std::codecvt_mode, std::codecvt_utf8, std::codecvt_utf16, and std::codecvt_utf8_utf16) are deprecated in C++17. (The std::codecvt class template is NOT deprecated.) The C++ Standard doesn't provide equivalent non-deprecated functionality; consider using MultiByteToWideChar() and WideCharToMultiByte() from <Windows.h> instead. You can define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to suppress this warning.
+  (compiling source file '../../vstgui4/vstgui/vstgui_win32.cpp')
+  
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\vstgui4\vstgui\lib\platform\common\generictextedit.cpp(760,32): warning C4996: 'std::wstring_convert<std::codecvt_utf8_utf16<VSTGUI::STB_CharT,1114111,(std::codecvt_mode)0>,VSTGUI::STB_CharT,std::allocator<char16_t>,std::allocator<char>>::to_bytes': warning STL4017: std::wbuffer_convert, std::wstring_convert, and the <codecvt> header (containing std::codecvt_mode, std::codecvt_utf8, std::codecvt_utf16, and std::codecvt_utf8_utf16) are deprecated in C++17. (The std::codecvt class template is NOT deprecated.) The C++ Standard doesn't provide equivalent non-deprecated functionality; consider using MultiByteToWideChar() and WideCharToMultiByte() from <Windows.h> instead. You can define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to suppress this warning.
+  (compiling source file '../../vstgui4/vstgui/vstgui_win32.cpp')
+  
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\vstgui4\vstgui\lib\platform\common\generictextedit.cpp(780,32): warning C4996: 'std::wstring_convert<std::codecvt_utf8_utf16<VSTGUI::STB_CharT,1114111,(std::codecvt_mode)0>,VSTGUI::STB_CharT,std::allocator<char16_t>,std::allocator<char>>::to_bytes': warning STL4017: std::wbuffer_convert, std::wstring_convert, and the <codecvt> header (containing std::codecvt_mode, std::codecvt_utf8, std::codecvt_utf16, and std::codecvt_utf8_utf16) are deprecated in C++17. (The std::codecvt class template is NOT deprecated.) The C++ Standard doesn't provide equivalent non-deprecated functionality; consider using MultiByteToWideChar() and WideCharToMultiByte() from <Windows.h> instead. You can define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to suppress this warning.
+  (compiling source file '../../vstgui4/vstgui/vstgui_win32.cpp')
+  
+  vstgui_uidescription_win32.cpp
+  Generating Code...
+     Creating library C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\\build\Volume.lib and object C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\\build\Volume.exp
+  Volume.vcxproj -> C:\Users\RichardsonJ\AppData\Roaming\RackAFX 7.0\PlugIns\Volume.rafx2\Contents\winOS\Volume.rafx2
+  Generate Bundle
+  Does C:\Users\RichardsonJ\AppData\Roaming\RackAFX 7.0\PlugIns\Volume.rafx2\desktop.ini specify a file name
+  or directory name on the target
+  (F = file, D = directory)? f
+  C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\desktop.ini -> C:\Users\RichardsonJ\AppData\Roaming\RackAFX 7.0\PlugIns\Volume.rafx2\desktop.ini
+  1 File(s) copied
+  Does C:\Users\RichardsonJ\AppData\Roaming\RackAFX 7.0\PlugIns\Volume.rafx2\rafx16.ico specify a file name
+  or directory name on the target
+  (F = file, D = directory)? f
+  C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\rafx16.ico -> C:\Users\RichardsonJ\AppData\Roaming\RackAFX 7.0\PlugIns\Volume.rafx2\rafx16.ico
+  1 File(s) copied
+  Does C:\Users\RichardsonJ\AppData\Roaming\RackAFX 7.0\PlugIns\Volume.rafx2\Contents\Resources\PluginGUI.uidesc specify a file name
+  or directory name on the target
+  (F = file, D = directory)? f
+  C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\Resources\PluginGUI.uidesc -> C:\Users\RichardsonJ\AppData\Roaming\RackAFX 7.0\PlugIns\Volume.rafx2\Contents\Resources\PluginGUI.uidesc
+  1 File(s) copied

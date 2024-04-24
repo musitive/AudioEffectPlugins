@@ -30,3 +30,17 @@
 *.exe
 *.out
 *.app
+
+# Image files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+
+# RackAFX caches and local files
+*.sextuplet
+*.rAFX
+
+# Visual Studio files
+*.ipch

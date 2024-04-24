@@ -1,0 +1,12 @@
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\vstgui4\vstgui\vstgui_uidescription_win32.cpp;C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\build\vstgui_uidescription_win32.obj
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\vstgui4\vstgui\vstgui_win32.cpp;C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\build\vstgui_win32.obj
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\CustomControls\customcontrols.cpp;C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\build\customcontrols.obj
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\CustomControls\customviews.cpp;C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\build\customviews.obj
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\PluginKernel\pluginbase.cpp;C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\build\pluginbase.obj
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\PluginKernel\plugincore.cpp;C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\build\plugincore.obj
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\PluginKernel\plugingui.cpp;C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\build\plugingui.obj
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\PluginKernel\pluginparameter.cpp;C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\build\pluginparameter.obj
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\PluginObjects\fxobjects.cpp;C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\build\fxobjects.obj
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 Source\RackAFXDLL.cpp;C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\build\RackAFXDLL.obj
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 Source\Rafx2Plugin.cpp;C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\build\Rafx2Plugin.obj
+C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 Source\Rafx2PluginBase.cpp;C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\build\Rafx2PluginBase.obj
