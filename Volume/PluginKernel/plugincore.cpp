@@ -165,27 +165,14 @@ bool PluginCore::processAudioFrame(ProcessFrameInfo& processFrameInfo)
 	//     for the DSP algorithm at hand
 	// updateParameters();
 
-
-    // --- decode the channelIOConfiguration and process accordingly
-    //
-	// --- Synth Plugin:
-	// --- Synth Plugin --- remove for FX plugins
-	if (getPluginType() == kSynthPlugin)
-	{
-		// --- output silence: change this with your signal render code
-		processFrameInfo.audioOutputFrame[0] = 0.0;
-		if (processFrameInfo.channelIOConfig.outputChannelFormat == kCFStereo)
-			processFrameInfo.audioOutputFrame[1] = 0.0;
-
-		return true;	/// processed
-	}
+	double finalVolume = m_fVolume;
 
     // --- FX Plugin:
     if(processFrameInfo.channelIOConfig.inputChannelFormat == kCFMono &&
        processFrameInfo.channelIOConfig.outputChannelFormat == kCFMono)
     {
 		// --- pass through code: change this with your signal processing
-        processFrameInfo.audioOutputFrame[0] = processFrameInfo.audioInputFrame[0];
+        processFrameInfo.audioOutputFrame[0] = finalVolume * processFrameInfo.audioInputFrame[0];
 
         return true; /// processed
     }
@@ -195,8 +182,8 @@ bool PluginCore::processAudioFrame(ProcessFrameInfo& processFrameInfo)
        processFrameInfo.channelIOConfig.outputChannelFormat == kCFStereo)
     {
 		// --- pass through code: change this with your signal processing
-        processFrameInfo.audioOutputFrame[0] = processFrameInfo.audioInputFrame[0];
-        processFrameInfo.audioOutputFrame[1] = processFrameInfo.audioInputFrame[0];
+        processFrameInfo.audioOutputFrame[0] = finalVolume * processFrameInfo.audioInputFrame[0];
+        processFrameInfo.audioOutputFrame[1] = finalVolume * processFrameInfo.audioInputFrame[0];
 
         return true; /// processed
     }
@@ -206,8 +193,8 @@ bool PluginCore::processAudioFrame(ProcessFrameInfo& processFrameInfo)
        processFrameInfo.channelIOConfig.outputChannelFormat == kCFStereo)
     {
 		// --- pass through code: change this with your signal processing
-        processFrameInfo.audioOutputFrame[0] = processFrameInfo.audioInputFrame[0];
-        processFrameInfo.audioOutputFrame[1] = processFrameInfo.audioInputFrame[1];
+        processFrameInfo.audioOutputFrame[0] = finalVolume * processFrameInfo.audioInputFrame[0];
+        processFrameInfo.audioOutputFrame[1] = finalVolume * processFrameInfo.audioInputFrame[1];
 
         return true; /// processed
     }
@@ -654,10 +641,10 @@ bool PluginCore::initPluginParameters()
 	PluginParameter* piParam = nullptr;
 
 	// --- continuous control: Volume
-	piParam = new PluginParameter(controlID::m_fVolume, "Volume", "Units", controlVariableType::kFloat, 0.000000, 1.000000, 0.750000, taper::kLinearTaper);
+	piParam = new PluginParameter(controlID::m_fVolume, "Volume", "", controlVariableType::kDouble, 0.000000, 1.000000, 0.707000, taper::kAntiLogTaper);
 	piParam->setParameterSmoothing(true);
 	piParam->setSmoothingTimeMsec(20.00);
-	piParam->setBoundVariable(&m_fVolume, boundVariableType::kFloat);
+	piParam->setBoundVariable(&m_fVolume, boundVariableType::kDouble);
 	addPluginParameter(piParam);
 
 	// --- Aux Attributes
@@ -666,7 +653,7 @@ bool PluginCore::initPluginParameters()
 	// --- RAFX GUI attributes
 	// --- controlID::m_fVolume
 	auxAttribute.reset(auxGUIIdentifier::guiControlData);
-	auxAttribute.setUintAttribute(2147483648);
+	auxAttribute.setUintAttribute(2147483650);
 	setParamAuxAttribute(controlID::m_fVolume, auxAttribute);
 
 
@@ -704,7 +691,7 @@ bool PluginCore::initPluginPresets()
 	// --- Preset: Factory Preset
 	preset = new PresetInfo(index++, "Factory Preset");
 	initPresetParameters(preset->presetParameters);
-	setPresetParameter(preset->presetParameters, controlID::m_fVolume, 0.750000);
+	setPresetParameter(preset->presetParameters, controlID::m_fVolume, 0.707000);
 	addPreset(preset);
 
 

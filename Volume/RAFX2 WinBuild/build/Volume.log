@@ -53,18 +53,5 @@ C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\vstgui4\vstgui\
      Creating library C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\\build\Volume.lib and object C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\\build\Volume.exp
   Volume.vcxproj -> C:\Users\RichardsonJ\AppData\Roaming\RackAFX 7.0\PlugIns\Volume.rafx2\Contents\winOS\Volume.rafx2
   Generate Bundle
-  Does C:\Users\RichardsonJ\AppData\Roaming\RackAFX 7.0\PlugIns\Volume.rafx2\desktop.ini specify a file name
-  or directory name on the target
-  (F = file, D = directory)? f
-  C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\desktop.ini -> C:\Users\RichardsonJ\AppData\Roaming\RackAFX 7.0\PlugIns\Volume.rafx2\desktop.ini
-  1 File(s) copied
-  Does C:\Users\RichardsonJ\AppData\Roaming\RackAFX 7.0\PlugIns\Volume.rafx2\rafx16.ico specify a file name
-  or directory name on the target
-  (F = file, D = directory)? f
-  C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\RAFX2 WinBuild\rafx16.ico -> C:\Users\RichardsonJ\AppData\Roaming\RackAFX 7.0\PlugIns\Volume.rafx2\rafx16.ico
-  1 File(s) copied
-  Does C:\Users\RichardsonJ\AppData\Roaming\RackAFX 7.0\PlugIns\Volume.rafx2\Contents\Resources\PluginGUI.uidesc specify a file name
-  or directory name on the target
-  (F = file, D = directory)? f
   C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\Volume\Resources\PluginGUI.uidesc -> C:\Users\RichardsonJ\AppData\Roaming\RackAFX 7.0\PlugIns\Volume.rafx2\Contents\Resources\PluginGUI.uidesc
   1 File(s) copied

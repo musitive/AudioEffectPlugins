@@ -128,7 +128,7 @@ private:
 	//  **--0x07FD--**
 
 	// --- Continuous Plugin Variables 
-	float m_fVolume = 0.f;
+	double m_fVolume = 0.0;
 
 
 	// **--0x1A7F--**
