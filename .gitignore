@@ -44,3 +44,4 @@
 
 # Visual Studio files
 *.ipch
+*.vsidx

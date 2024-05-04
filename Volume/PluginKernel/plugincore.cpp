@@ -165,7 +165,11 @@ bool PluginCore::processAudioFrame(ProcessFrameInfo& processFrameInfo)
 	//     for the DSP algorithm at hand
 	// updateParameters();
 
-	double finalVolume = m_fVolume;
+	double finalVolume = pow(10, m_fVolume/20);
+	
+	if (compareEnumToInt(m_uEnableMuteEnum::SWITCH_ON, m_uEnableMute)) {
+		finalVolume = 0;
+	}
 
     // --- FX Plugin:
     if(processFrameInfo.channelIOConfig.inputChannelFormat == kCFMono &&
@@ -173,6 +177,9 @@ bool PluginCore::processAudioFrame(ProcessFrameInfo& processFrameInfo)
     {
 		// --- pass through code: change this with your signal processing
         processFrameInfo.audioOutputFrame[0] = finalVolume * processFrameInfo.audioInputFrame[0];
+
+		m_fLeftOutMeter = processFrameInfo.audioOutputFrame[0];
+		m_fRightOutMeter = processFrameInfo.audioOutputFrame[0];
 
         return true; /// processed
     }
@@ -185,6 +192,9 @@ bool PluginCore::processAudioFrame(ProcessFrameInfo& processFrameInfo)
         processFrameInfo.audioOutputFrame[0] = finalVolume * processFrameInfo.audioInputFrame[0];
         processFrameInfo.audioOutputFrame[1] = finalVolume * processFrameInfo.audioInputFrame[0];
 
+		m_fLeftOutMeter = processFrameInfo.audioOutputFrame[0];
+		m_fRightOutMeter = processFrameInfo.audioOutputFrame[1];
+
         return true; /// processed
     }
 
@@ -195,6 +205,9 @@ bool PluginCore::processAudioFrame(ProcessFrameInfo& processFrameInfo)
 		// --- pass through code: change this with your signal processing
         processFrameInfo.audioOutputFrame[0] = finalVolume * processFrameInfo.audioInputFrame[0];
         processFrameInfo.audioOutputFrame[1] = finalVolume * processFrameInfo.audioInputFrame[1];
+
+		m_fLeftOutMeter = processFrameInfo.audioOutputFrame[0];
+		m_fRightOutMeter = processFrameInfo.audioOutputFrame[1];
 
         return true; /// processed
     }
@@ -641,10 +654,26 @@ bool PluginCore::initPluginParameters()
 	PluginParameter* piParam = nullptr;
 
 	// --- continuous control: Volume
-	piParam = new PluginParameter(controlID::m_fVolume, "Volume", "", controlVariableType::kDouble, 0.000000, 1.000000, 0.707000, taper::kAntiLogTaper);
+	piParam = new PluginParameter(controlID::m_fVolume, "Volume", "dB", controlVariableType::kFloat, -96.000000, 0.000000, -6.000000, taper::kLogTaper);
 	piParam->setParameterSmoothing(true);
 	piParam->setSmoothingTimeMsec(20.00);
-	piParam->setBoundVariable(&m_fVolume, boundVariableType::kDouble);
+	piParam->setBoundVariable(&m_fVolume, boundVariableType::kFloat);
+	addPluginParameter(piParam);
+
+	// --- discrete control: Mute
+	piParam = new PluginParameter(controlID::m_uEnableMute, "Mute", "SWITCH OFF,SWITCH ON", "SWITCH OFF");
+	piParam->setBoundVariable(&m_uEnableMute, boundVariableType::kInt);
+	piParam->setIsDiscreteSwitch(true);
+	addPluginParameter(piParam);
+
+	// --- meter control: LOUT
+	piParam = new PluginParameter(controlID::m_fLeftOutMeter, "LOUT", 10.00, 100.00, ENVELOPE_DETECT_MODE_RMS, meterCal::kLogMeter);
+	piParam->setBoundVariable(&m_fLeftOutMeter, boundVariableType::kFloat);
+	addPluginParameter(piParam);
+
+	// --- meter control: ROUT
+	piParam = new PluginParameter(controlID::m_fRightOutMeter, "ROUT", 10.00, 100.00, ENVELOPE_DETECT_MODE_RMS, meterCal::kLogMeter);
+	piParam->setBoundVariable(&m_fRightOutMeter, boundVariableType::kFloat);
 	addPluginParameter(piParam);
 
 	// --- Aux Attributes
@@ -655,6 +684,21 @@ bool PluginCore::initPluginParameters()
 	auxAttribute.reset(auxGUIIdentifier::guiControlData);
 	auxAttribute.setUintAttribute(2147483650);
 	setParamAuxAttribute(controlID::m_fVolume, auxAttribute);
+
+	// --- controlID::m_uEnableMute
+	auxAttribute.reset(auxGUIIdentifier::guiControlData);
+	auxAttribute.setUintAttribute(1073741829);
+	setParamAuxAttribute(controlID::m_uEnableMute, auxAttribute);
+
+	// --- controlID::m_fLeftOutMeter
+	auxAttribute.reset(auxGUIIdentifier::guiControlData);
+	auxAttribute.setUintAttribute(201326592);
+	setParamAuxAttribute(controlID::m_fLeftOutMeter, auxAttribute);
+
+	// --- controlID::m_fRightOutMeter
+	auxAttribute.reset(auxGUIIdentifier::guiControlData);
+	auxAttribute.setUintAttribute(201326592);
+	setParamAuxAttribute(controlID::m_fRightOutMeter, auxAttribute);
 
 
 	// **--0xEDA5--**
@@ -691,7 +735,8 @@ bool PluginCore::initPluginPresets()
 	// --- Preset: Factory Preset
 	preset = new PresetInfo(index++, "Factory Preset");
 	initPresetParameters(preset->presetParameters);
-	setPresetParameter(preset->presetParameters, controlID::m_fVolume, 0.707000);
+	setPresetParameter(preset->presetParameters, controlID::m_fVolume, -6.000000);
+	setPresetParameter(preset->presetParameters, controlID::m_uEnableMute, -0.000000);
 	addPreset(preset);
 
 

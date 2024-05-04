@@ -26,10 +26,9 @@
               "RelativeDocumentMoniker": "..\\PluginKernel\\plugincore.h",
               "ToolTip": "C:\\Users\\RichardsonJ\\Documents\\Python Scripts\\AudioEffectPlugins\\Volume\\PluginKernel\\plugincore.h",
               "RelativeToolTip": "..\\PluginKernel\\plugincore.h",
-              "ViewState": "AQIAAGwAAAAAAAAAAAAAAIIAAAAYAAAA",
+              "ViewState": "AQIAAIAAAAAAAAAAAAAAAIsAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-24T00:27:19.093Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-24T00:27:19.093Z"
             },
             {
               "$type": "Document",
@@ -39,7 +38,7 @@
               "RelativeDocumentMoniker": "..\\PluginKernel\\plugincore.cpp",
               "ToolTip": "C:\\Users\\RichardsonJ\\Documents\\Python Scripts\\AudioEffectPlugins\\Volume\\PluginKernel\\plugincore.cpp",
               "RelativeToolTip": "..\\PluginKernel\\plugincore.cpp",
-              "ViewState": "AQIAAIMAAAAAAAAAAAAAwJAAAAAcAAAA",
+              "ViewState": "AQIAAJsAAAAAAAAAAAAAAKoAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-24T00:07:30.838Z",
               "EditorCaption": ""

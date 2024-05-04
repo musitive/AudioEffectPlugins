@@ -20,7 +20,10 @@
 // --- Plugin Variables controlID Enumeration 
 
 enum controlID {
-	m_fVolume = 0
+	m_fVolume = 0,
+	m_uEnableMute = 1,
+	m_fLeftOutMeter = 2,
+	m_fRightOutMeter = 3
 };
 
 	// **--0x0F1F--**
@@ -128,8 +131,15 @@ private:
 	//  **--0x07FD--**
 
 	// --- Continuous Plugin Variables 
-	double m_fVolume = 0.0;
+	float m_fVolume = 0.f;
 
+	// --- Discrete Plugin Variables 
+	int m_uEnableMute = 0;
+	enum class m_uEnableMuteEnum { SWITCH_OFF,SWITCH_ON };	// to compare: if(compareEnumToInt(m_uEnableMuteEnum::SWITCH_OFF, m_uEnableMute)) etc... 
+
+	// --- Meter Plugin Variables
+	float m_fLeftOutMeter = 0.f;
+	float m_fRightOutMeter = 0.f;
 
 	// **--0x1A7F--**
     // --- end member variables
