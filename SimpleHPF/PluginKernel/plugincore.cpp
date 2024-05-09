@@ -84,6 +84,17 @@ bool PluginCore::initialize(PluginInfo& pluginInfo)
 {
 	// --- add one-time init stuff here
 
+	// save a1
+	m_f_a1_left = m_fSlider_a1;
+	m_f_a1_right = m_fSlider_a1;
+
+	// calculate a0
+	m_f_a0_left = m_f_a1_left - 1.0;
+	m_f_a0_right = m_f_a1_right - 1.0;
+
+	m_f_z1_left = 0.0;
+	m_f_z1_right = 0.0;
+
 	return true;
 }
 
@@ -106,6 +117,9 @@ bool PluginCore::preProcessAudioBuffers(ProcessBufferInfo& processInfo)
     // --- sync internal variables to GUI parameters; you can also do this manually if you don't
     //     want to use the auto-variable-binding
     syncInBoundVariables();
+
+	m_f_z1_left = 0.0;
+	m_f_z1_right = 0.0;
 
     return true;
 }
@@ -165,28 +179,39 @@ bool PluginCore::processAudioFrame(ProcessFrameInfo& processFrameInfo)
 	//     for the DSP algorithm at hand
 	// updateParameters();
 
+	// save a1
+	m_f_a1_left = m_fSlider_a1;
+	m_f_a1_right = m_fSlider_a1;
+
+	// calculate a0
+	m_f_a0_left = m_f_a1_left - 1.0;
+	m_f_a0_right = m_f_a1_right - 1.0;
+
+	// Volume
+	float finalVolume = pow(10.0, m_fVolume / 20.0);
+
+	// Do LEFT (MONO) Channel
+	// Input sample is x(n)
+	float xn = processFrameInfo.audioInputFrame[0];
+
+	// READ: Delay sample is x(n-1)
+	float xn_1 = m_f_z1_left;
+
+	// Difference Equation
+	float yn = m_f_a0_left * xn + m_f_a1_left * xn_1;
+
+	// WRITE: Delay with current x(n)
+	m_f_z1_left = xn;
+
+	// Output sample is y(n)
+	processFrameInfo.audioOutputFrame[0] = yn * finalVolume;
 
     // --- decode the channelIOConfiguration and process accordingly
-    //
-	// --- Synth Plugin:
-	// --- Synth Plugin --- remove for FX plugins
-	if (getPluginType() == kSynthPlugin)
-	{
-		// --- output silence: change this with your signal render code
-		processFrameInfo.audioOutputFrame[0] = 0.0;
-		if (processFrameInfo.channelIOConfig.outputChannelFormat == kCFStereo)
-			processFrameInfo.audioOutputFrame[1] = 0.0;
-
-		return true;	/// processed
-	}
 
     // --- FX Plugin:
     if(processFrameInfo.channelIOConfig.inputChannelFormat == kCFMono &&
        processFrameInfo.channelIOConfig.outputChannelFormat == kCFMono)
     {
-		// --- pass through code: change this with your signal processing
-        processFrameInfo.audioOutputFrame[0] = processFrameInfo.audioInputFrame[0];
-
         return true; /// processed
     }
 
@@ -194,9 +219,7 @@ bool PluginCore::processAudioFrame(ProcessFrameInfo& processFrameInfo)
     else if(processFrameInfo.channelIOConfig.inputChannelFormat == kCFMono &&
        processFrameInfo.channelIOConfig.outputChannelFormat == kCFStereo)
     {
-		// --- pass through code: change this with your signal processing
-        processFrameInfo.audioOutputFrame[0] = processFrameInfo.audioInputFrame[0];
-        processFrameInfo.audioOutputFrame[1] = processFrameInfo.audioInputFrame[0];
+		processFrameInfo.audioOutputFrame[1] = yn * finalVolume;
 
         return true; /// processed
     }
@@ -205,9 +228,21 @@ bool PluginCore::processAudioFrame(ProcessFrameInfo& processFrameInfo)
     else if(processFrameInfo.channelIOConfig.inputChannelFormat == kCFStereo &&
        processFrameInfo.channelIOConfig.outputChannelFormat == kCFStereo)
     {
-		// --- pass through code: change this with your signal processing
-        processFrameInfo.audioOutputFrame[0] = processFrameInfo.audioInputFrame[0];
-        processFrameInfo.audioOutputFrame[1] = processFrameInfo.audioInputFrame[1];
+		// Do RIGHT Channel
+		// Input sample is x(n)
+		float xn_right = processFrameInfo.audioInputFrame[1];
+
+		// READ: Delay sample is x(n-1)
+		float xn_1_right = m_f_z1_right;
+
+		// Difference Equation
+		float yn_right = m_f_a0_right * xn_right + m_f_a1_right * xn_1_right;
+
+		// WRITE: Delay with current x(n)
+		m_f_z1_right = xn_right;
+
+		// Output sample is y(n)
+        processFrameInfo.audioOutputFrame[1] = yn_right * finalVolume;
 
         return true; /// processed
     }
@@ -650,6 +685,37 @@ bool PluginCore::initPluginParameters()
 	// **--0xDEA7--**
 
 
+	// --- Declaration of Plugin Parameter Objects 
+	PluginParameter* piParam = nullptr;
+
+	// --- continuous control: a1
+	piParam = new PluginParameter(controlID::m_fSlider_a1, "a1", "", controlVariableType::kFloat, 0.000000, 0.490000, 0.000000, taper::kLinearTaper);
+	piParam->setParameterSmoothing(false);
+	piParam->setSmoothingTimeMsec(100.00);
+	piParam->setBoundVariable(&m_fSlider_a1, boundVariableType::kFloat);
+	addPluginParameter(piParam);
+
+	// --- continuous control: Volume
+	piParam = new PluginParameter(controlID::m_fVolume, "Volume", "dB", controlVariableType::kFloat, -96.000000, 0.000000, -6.000000, taper::kLogTaper);
+	piParam->setParameterSmoothing(false);
+	piParam->setSmoothingTimeMsec(100.00);
+	piParam->setBoundVariable(&m_fVolume, boundVariableType::kFloat);
+	addPluginParameter(piParam);
+
+	// --- Aux Attributes
+	AuxParameterAttribute auxAttribute;
+
+	// --- RAFX GUI attributes
+	// --- controlID::m_fSlider_a1
+	auxAttribute.reset(auxGUIIdentifier::guiControlData);
+	auxAttribute.setUintAttribute(2147483648);
+	setParamAuxAttribute(controlID::m_fSlider_a1, auxAttribute);
+
+	// --- controlID::m_fVolume
+	auxAttribute.reset(auxGUIIdentifier::guiControlData);
+	auxAttribute.setUintAttribute(2147483654);
+	setParamAuxAttribute(controlID::m_fVolume, auxAttribute);
+
 
 	// **--0xEDA5--**
 
@@ -677,6 +743,18 @@ NOTES:
 bool PluginCore::initPluginPresets()
 {
 	// **--0xFF7A--**
+
+	// --- Plugin Presets 
+	int index = 0;
+	PresetInfo* preset = nullptr;
+
+	// --- Preset: Factory Preset
+	preset = new PresetInfo(index++, "Factory Preset");
+	initPresetParameters(preset->presetParameters);
+	setPresetParameter(preset->presetParameters, controlID::m_fSlider_a1, 0.000000);
+	setPresetParameter(preset->presetParameters, controlID::m_fVolume, -6.000000);
+	addPreset(preset);
+
 
 	// **--0xA7FF--**
 
@@ -748,6 +826,3 @@ const char* PluginCore::getAUCocoaViewFactoryName(){ return AU_COCOA_VIEWFACTORY
 pluginType PluginCore::getPluginType(){ return kPluginType; }
 const char* PluginCore::getVSTFUID(){ return kVSTFUID; }
 int32_t PluginCore::getFourCharCode(){ return kFourCharCode; }
-
-
-

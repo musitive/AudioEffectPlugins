@@ -1,53 +1,141 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <vstgui-ui-description version="1">
-	<fonts>
-	</fonts>
+	<fonts />
 	<colors>
+		<color name="kLightGreyCColor" rgba="#c8c8c8ff" />
+		<color name="kDarkGreyCColor" rgba="#646464ff" />
 	</colors>
-	<template background-color="~ GreyCColor" background-color-draw-style="filled and stroked" class="CViewContainer" maxSize="450, 300" minSize="450, 300" mouse-enabled="true" name="Editor" opacity="1" origin="0, 0" size="450, 300" transparent="false">
+	<template background-color="~ GreyCColor" background-color-draw-style="filled and stroked" class="CViewContainer" maxSize="31, 86" minSize="31, 86" mouse-enabled="true" name="Editor" opacity="1" origin="0, 0" size="31, 86" transparent="false">
+		<view background-offset="0, 0" bitmap="vuledon" class="CVuMeter" control-tag="" custom-view-name="MeterView" num-led="20" decrease-step-value="0.1" default-value="0.5" max-value="1" min-value="0" mouse-enabled="false" off-bitmap="vuledoff" orientation="vertical" origin="7, 0" size="17, 86" transparent="false" wheel-inc-value="0.1" />
 	</template>
 	<custom>
-		<attributes Path="" name="ASPiKEditor"/>
-		<attributes name="FocusDrawing"/>
-		<attributes KnobAction="2" name="Settings"/>
-		<attributes Size="10, 10" name="UIGridController"/>
-		<attributes SelectedTemplate="Editor" name="UITemplateController"/>
-		<attributes name="UIAttributesController"/>
-		<attributes EditViewScale="1" EditorSize="0, 0, 1024, 768" EncodeBitmaps="true" SplitViewSize_0_0="0.6613119143239625241648127484950236976147" SplitViewSize_0_1="0.3119143239625167263184835064748767763376" SplitViewSize_1_0="0.4779116465863453844242769719130592420697" SplitViewSize_1_1="0.5153949129852744004409714762005023658276" SplitViewSize_2_0="0.7560842322750649380225240747677162289619" SplitViewSize_2_1="0.2373056451794015864198428289455478079617" TabSwitchValue="0" Version="1" WriteRCFile="false" name="UIEditController"/>
-		<attributes AppendUnits="true"/>
-		<attributes TransparentEdits="true"/>
-		<attributes default-blurb-color="~ WhiteCColor"/>
-		<attributes RAFXShowGrid="false"/>
-		<attributes SelectedRow="0" name="UIViewCreatorDataSource"/>
-		<attributes SelectedRow="0" name="UIBitmapsDataSource"/>
-		<attributes SelectedRow="0" name="UITagsDataSource"/>
+		<attributes Path="" name="ASPiKEditor" />
+		<attributes name="FocusDrawing" />
+		<attributes KnobAction="2" name="Settings" />
+		<attributes Size="10, 10" name="UIGridController" />
+		<attributes SelectedTemplate="Editor" name="UITemplateController" />
+		<attributes name="UIAttributesController" />
+		<attributes EditViewScale="1" EditorSize="0, 0, 1024, 768" EncodeBitmaps="true" SplitViewSize_0_0="0.6613119143239625241648127484950236976147" SplitViewSize_0_1="0.3119143239625167263184835064748767763376" SplitViewSize_1_0="0.4779116465863453844242769719130592420697" SplitViewSize_1_1="0.5153949129852744004409714762005023658276" SplitViewSize_2_0="0.7560842322750649380225240747677162289619" SplitViewSize_2_1="0.2373056451794015864198428289455478079617" TabSwitchValue="0" Version="1" WriteRCFile="false" name="UIEditController" />
+		<attributes AppendUnits="true" />
+		<attributes TransparentEdits="true" />
+		<attributes default-blurb-color="~ WhiteCColor" />
+		<attributes RAFXShowGrid="false" />
+		<attributes SelectedRow="0" name="UIViewCreatorDataSource" />
+		<attributes SelectedRow="0" name="UIBitmapsDataSource" />
+		<attributes SelectedRow="0" name="UITagsDataSource" />
+		<attributes Path="C:\Users\RichardsonJ\Documents\Python Scripts\AudioEffectPlugins\SimpleHPF\Resources\PluginGUI.uidesc" />
 	</custom>
 	<bitmaps>
+		<bitmap name="vuledon" path="vuledon.png">
+			<data encoding="base64">
+        iVBORw0KGgoAAAANSUhEUgAAABEAAABVCAYAAACvpA+AAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQ
+        UAAAAJcEhZcwAADsQAAA7EAZUrDhsAAABnSURBVFhH7dCxCcAwDABBOSNkUo/iSbOCE0Qg4K9sUpl/BEKF
+        mgtD5d3Rc+Z6nvP/yGubNGGfSV8wKZqMacJ2N2lXmzapZ9VkSBOmCdOEacI0YZowTZgmTBOmCdOEacI0YZ
+        ua/FDEDUZeST28e3HtAAAAAElFTkSuQmCC
+      </data>
+		</bitmap>
+		<bitmap name="vuledoff" path="vuledoff.png">
+			<data encoding="base64">
+        iVBORw0KGgoAAAANSUhEUgAAABEAAABVCAYAAACvpA+AAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQ
+        UAAAAJcEhZcwAADsQAAA7EAZUrDhsAAABxSURBVFhH7dShDYBAEAXRD5bGKIQWMBSAoQUKoTE0JOSCYAwI
+        zGWe2T1xZsRG0JSZJTnK+tpY/rfXqxo2obvJNnefm/TTbpMHm1DtTTJ8vydZ674nNrnZhGxCNiGbkE3IJm
+        QTsgnZhGxCNiGbkE1+kZwGrC49hxLEAwAAAABJRU5ErkJggg==
+      </data>
+		</bitmap>
+		<bitmap name="vsbackground" path="vsbackground.png">
+			<data encoding="base64">
+        iVBORw0KGgoAAAANSUhEUgAAACAAAABfCAYAAACJDsXgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQ
+        UAAAAJcEhZcwAACxMAAAsTAQCanBgAAAiXSURBVGhDrVrNjxzVEa/umZ7dzYx317B2DsnBYAOOxA2QcudD
+        SEg5cYsiJVwTEYULOYQLJ4QvHJBySsx/wAE4IC4QsFkvH7ackIjEcSwCTsxiDDvfM/1B/arem117Zt4rM/
+        Prff26e+pV/V5Vverp2U4ogCd/9+TalU8+e+HbG+2ntjbubGVpnbLVjIpRTj9otmg8HlG20qBGLaN6vU5F
+        UVCDz2u1WvWvf3zavfjRxT8Ph8Pfs6q+apxGkMBvnn/ml3s3vjm9trZGm5ubVZY1klarWbHS5MiRI9Tr9e
+        nQoRatrK5Sq9mkwWBYtfi8kWXJaDyu/vjiy8lbr7/5q7IsX3Eqp5C6fibuPX7i9NbWFiUJ86zQJcwYnfQ3
+        sa/KkqqqTKqySqqqotWVleThJx6B9GknMhMzCbACKEmOHjkqrq3XuNVrVEtTyvg8q6vL0WppjZWkbAhNKT
+        EJ6KD19UNyKhfnYIoADHOH63WOpRrnHkZXGg3Ksoxd3KA6G8ZnQoANowkJ6EBjEiX3jIOOmsLUh0ygxl0N
+        /avvvNa7cP4C9ft92tjYoL9+eJEuf3pJZtdgMnmRI+HYeEo19lDOSfjgTx+ix372OKVpQlcu/4ee/sWvK0
+        7OuaGe9QHcDxIZZiVeELfX6ep/v6DzOx/ThQ/O086Zc/Tx9kf0wZkdOvfeNp19+wztvLtN//7nJecCbuwF
+        6MNuHm4i4NyPJiFIOeapuFpDgBywgrPAHYUxpZFJ4Bo8UIdrkXyadBmTiRPA2uDVwI0dUMRJTGmURZYkSo
+        ANItFAgNe2JJwF4nO2LVOJYJaI9wDnACcXQoAlx9XO4gGPqiwoKdxJALdqlPXvwuA8oCFAEtpCgDCKA6jQ
+        JAxiSiP8z90kBFgFtxUCHq0kkIa5XgtgisDBJERCaYFBv1/pQvCzx4ErREHM8yksxf09AzJ7uS+gHAuFYB
+        xmhgDAIc5LV9et6xpSkNdxei0EwyxFpZmEzlwbs3BX5yNKAHp8M9gXGSS/khAnym4eDASgiGciDCyAnzgE
+        Ug3jhSBOAJufEW8xiAy7oGT5RVbBPsQmlIGFXAkD9rkKyqGugiCMITAaZ0AM8mWhN6QYzATwDcfEQuS1d6
+        sgOMicA+7EBCQgwuBux4utAkBIaBZEoeECaUjHR8Q9gIomVc1iXgFZVMLCMMbkAYHRPsT4QYR7kF7CKoCy
+        iUJ3LQRJWBaUMTogOMzgAYyHUu4NLgW0CrKsroJFS/F+M0FklbCQkCvzYSAARZgJ9MRZQFbGSAhEfkEPYG
+        M9Uoji9gXyWCbE9VT2cxDPAdiFMtlsQA5IryMW84BPKDebKCAGedwLeLBeDCBIQOYsOtz84/qUrFuCjnRw
+        lCkJUdVwcxcSBmjIuH7QMr6Q+Gm4uEYB40JavcBY9GaE2ehmAeR0BaDFSRuSkJW6JWgiAbmJF+LycQ94Zd
+        wsECmM4RDwQ6ZcC8GYA67F9Qk0/nw7NqSNgQA3dqUSiUO9pb0snQhtQxJqPROFRhLA0r6QqF3s5C8Olt1/
+        OJU6sOjtWN2PzQKRZPml3Yw8AesqgDm5JeOAPcFY3AN+EnocBiTk0VwSV6+FYCIgBcWgTMDyOgbxjw+KEo
+        AS2dSdUWDWkMfB0laB6MNmUCiSk1WwhDqgiqzGFZBd4t2QAQ8gDwzYJ8wnGrbgQFsS+mUV1iUQuxMScXlz
+        CKDZoE/gSYM2YwkhYEX2QnRg9u6HEtnPQZSAFBUxbiPgjaMVy/AAq3IK9dgCeTBBAhoSNx4Cbxxr2mAfIv
+        7BpHB9CPYktMLJa5MkCA42hUD2k1wIQ6TZ/Uv7lQxaZDbuNAqW9d8JXSFaLAl1FUCvmcJE3jIm7gEJglcW
+        VyiGeZNE1LkHBxmSkBuWk8zIXYzA3w3le8TCdUAM66wsgJQaZw8ogeBAWwgcCSu8vKsCi3pA9tJbKIhhEc
+        YYoRAcZguBuFKVRuHEJktxKfcC9BpPA5SB/NNyGTmASUy+5xsAuck/LDQJlrEKPBEDCScC2cKnYQBRArAs
+        JMweUONCdhkhmCRTXJeCZf2XGBm3aAhg9ICyKCDF0pIHliGmJNQentDjIBxZtKX9TGedvYc8xmGMYeneVg
+        hMDrhNeVMIvEITnPyBShiEKQTiSugyKISE/3UE5SuGKAGsITjT/GDC8B5zHggOjHvAJ5QoM5BwhuUbUbwQ
+        Ggj4Xki4kwBk5q4QuWW4eCHCrOy3IyXhn5BjMCShP3B9BBCTx3kMXEodQBxZj7jWMCMvhzC4u3IQYQKYBP
+        4LnnM0C9T2OAEWksQtIZ9+Dw+wEQEO4cp8NKbBYED9fo/yPP5mFGIPshhb5t+DAAOj4Lwc1Ww4HAqBLhMY
+        jcciEAI8hjctMbaohHCQxRSBJEkqboh8jlmAQL/bp16nS+uH1+nEyXuknbz/J3T85Ak6ft8JOnbPXXTs3r
+        vpR8d+TJt3HhZPFdykhkSW4U0fsudBaJX7JvetN868efnlUy9R55sONbdatL55mDbX1/mjRN4n3mt3mDDR
+        KB/LO6R77ba8ADlg0gV74sbudTr31vsIyVwSt3rAx19DIB4YyUut3V6HOt0OtTsdNrTHfZs6aHxtMBxIG6
+        JxmAoOgc8D6MRuHmblQMkhKLiNm80m4a3qQW9AvW6P2jxDGFcCSqg/4PDwZwgVcgSGx9zggVHJORB5A3Bm
+        DjAkB44e/eFvH3n8UVEGI51uW2a+52be5vNur0f9YV8IDEdDGnM4xAO5FoE77tp6Sg7m4NYcwHmdW8atsd
+        vtrn3x5eXnzv7l7M//9veL62kjo5WVVQjS6uqKxBqveyIP0lqdxuyBWi0VAt1u79ur///fn6598vkftre3
+        7S+3Mwm81FxnT4BEudvd3fjs2tUHvt69fpivpUmN9+618rJMy6rAai15yaP25VU5LstBnpdXrly68dX1az
+        unnj3VhuxsEH0H1/HgTwTmcMIAAAAASUVORK5CYII=
+      </data>
+		</bitmap>
+		<bitmap name="vshandle" path="vshandle.png">
+			<data encoding="base64">
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAPCAYAAACFgM0XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQ
+        UAAAAJcEhZcwAACxMAAAsTAQCanBgAAAJeSURBVEhLzZTbjtJQFIbbciotDDCkmDBjooHAleEReA6fwzsv
+        eQ1fwVfwbRxjRmWoDCgMtH7/TjeWgwyXruTLv7rbvQ77UNc5Ng80vtPxeOz3er0gDEONGatWq0daKpXSIA
+        icWq2WXF1dJb7vp+12O4miaLtarZaDwWBlPs7ZYQFKUIYSVCyTyeTtcDh8V6lUQnAIrGRGy+WySS4Vep9p
+        ylxrcwp4T2Efsued7TrKzBYQQpMkUbFY7E6n085ms/Fd19U7g3zheV45TdO9cY2hFdTAez9JEjV1tOKnCl
+        DXIYmbTIqgO5/P26hHIAd1pJeQt/V6fZjL2L9WICBAEyL87nK5bG+3W88mt8qY8S35Mam1bI5iX7YCdG+2
+        ACIm36gAtsAUYINb32ILyz/nzOUMXFxAiclVqMM1e9hhsrbDPZXIjuWLkq8xYU0NZO6eHVZUg9tCodBl8i
+        tBAa/7/f6b0Wj0kpNd5J2rG8AqOfjm6snnOzPGzVjV6/WfzWYzbrVaMTprNBrf4zj+yHX+RPy/e4MdFhDA
+        CwJ1SH4Dt1KCy2/zTufjaBlzlsAjN+Ar39/h3+F/ZkXkf4E4+2Znh8F8UKJrulMRHXyjFKEzUYTDOfnNlr
+        /k+x/oPckNLP89z9/gEc4WoA4bUGdpW+xnC1+3QartKcC5FVABvyEm8QweSP7A8wykv2D/dGZqTR1qG/R/
+        rVFEjeQhKLlW5+RJzpmCP8GC5AuSq+MFWF3D2QLMLYDdnw30Y5LaP9lzBeiQKZFF/3/rb2DPTgWzXUrzPJ
+        fcmorQPuexY3vd/wfmOH8Ank55syMsDMwAAAAASUVORK5CYII=
+      </data>
+		</bitmap>
 	</bitmaps>
 	<control-tags>
+		<control-tag name="controlID::m_fSlider_a1" tag="0" />
+		<control-tag name="controlID::m_fVolume" tag="1" />
 		<control-tag name="XY_TRACKPAD" tag="131073" />
 		<control-tag name="VECTOR_JOYSTICK" tag="131074" />
 		<control-tag name="PRESET_NAME" tag="131075" />
 		<control-tag name="WRITE_PRESET_FILE" tag="131076" />
 		<control-tag name="SCALE_GUI_SIZE" tag="131077" />
 	</control-tags>
-	<variables/>
+	<variables />
 	<gradients>
 		<gradient name="Default TextButton Gradient">
-			<color-stop rgba="#dcdcdcff" start="0"/>
-			<color-stop rgba="#b4b4b4ff" start="1"/>
+			<color-stop rgba="#dcdcdcff" start="0" />
+			<color-stop rgba="#b4b4b4ff" start="1" />
 		</gradient>
 		<gradient name="Default TextButton Gradient Highlighted">
-			<color-stop rgba="#b4b4b4ff" start="0"/>
-			<color-stop rgba="#646464ff" start="1"/>
+			<color-stop rgba="#b4b4b4ff" start="0" />
+			<color-stop rgba="#646464ff" start="1" />
 		</gradient>
 		<gradient name="segbutton">
-			<color-stop rgba="#ffffffff" start="0"/>
-			<color-stop rgba="#767676ff" start="1"/>
+			<color-stop rgba="#ffffffff" start="0" />
+			<color-stop rgba="#767676ff" start="1" />
 		</gradient>
 		<gradient name="segbutton2">
-			<color-stop rgba="#ffffffff" start="0"/>
-			<color-stop rgba="#000000ff" start="1"/>
+			<color-stop rgba="#ffffffff" start="0" />
+			<color-stop rgba="#000000ff" start="1" />
+		</gradient>
+		<gradient name="kLightGreyCColor">
+			<color-stop rgba="#c8c8c8ff" start="0" />
+			<color-stop rgba="#c8c8c8ff" start="1" />
+		</gradient>
+		<gradient name="kDarkGreyCColor">
+			<color-stop rgba="#646464ff" start="0" />
+			<color-stop rgba="#646464ff" start="1" />
 		</gradient>
 	</gradients>
+	<template background-color="~ GreyCColor" background-color-draw-style="filled and stroked" bitmap="" class="CViewContainer" maxSize="1024, 791" minSize="1024, 791" mouse-enabled="true" name="Off Screen View 1" origin="0, 0" size="1024, 791" transparent="false" />
 </vstgui-ui-description>

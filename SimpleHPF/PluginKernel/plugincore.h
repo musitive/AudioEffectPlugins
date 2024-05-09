@@ -17,8 +17,14 @@
 
 // **--0x7F1F--**
 
+// --- Plugin Variables controlID Enumeration 
 
-// **--0x0F1F--**
+enum controlID {
+	m_fSlider_a1 = 0,
+	m_fVolume = 1
+};
+
+	// **--0x0F1F--**
 
 /**
 \class PluginCore
@@ -113,7 +119,14 @@ public:
 	// --- BEGIN USER VARIABLES AND FUNCTIONS -------------------------------------- //
 	//	   Add your variables and methods here
 
+	float m_f_a0_left;
+	float m_f_a1_left;
 
+	float m_f_a0_right;
+	float m_f_a1_right;
+
+	float m_f_z1_left;
+	float m_f_z1_right;
 
 	// --- END USER VARIABLES AND FUNCTIONS -------------------------------------- //
 
@@ -121,6 +134,11 @@ protected:
 
 private:
 	//  **--0x07FD--**
+
+	// --- Continuous Plugin Variables 
+	float m_fSlider_a1 = 0.f;
+	float m_fVolume = 0.f;
+
 
 	// **--0x1A7F--**
     // --- end member variables
@@ -205,5 +223,3 @@ public:
 
 
 #endif /* defined(__pluginCore_h__) */
-
-

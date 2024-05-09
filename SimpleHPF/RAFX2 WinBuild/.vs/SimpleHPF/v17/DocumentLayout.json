@@ -4,6 +4,12 @@
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{ED3E6A75-15A9-4D9B-B020-8EC23FAF5600}|SimpleHPF.vcxproj|C:\\Users\\RichardsonJ\\Documents\\Python Scripts\\AudioEffectPlugins\\SimpleHPF\\PluginKernel\\plugincore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\RichardsonJ\\Documents\\Python Scripts\\AudioEffectPlugins\\Volume\\PluginKernel\\plugincore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED3E6A75-15A9-4D9B-B020-8EC23FAF5600}|SimpleHPF.vcxproj|C:\\Users\\RichardsonJ\\Documents\\Python Scripts\\AudioEffectPlugins\\SimpleHPF\\PluginKernel\\plugincore.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,8 +19,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "plugincore.cpp",
+              "DocumentMoniker": "C:\\Users\\RichardsonJ\\Documents\\Python Scripts\\AudioEffectPlugins\\Volume\\PluginKernel\\plugincore.cpp",
+              "RelativeDocumentMoniker": "..\\..\\Volume\\PluginKernel\\plugincore.cpp",
+              "ToolTip": "C:\\Users\\RichardsonJ\\Documents\\Python Scripts\\AudioEffectPlugins\\Volume\\PluginKernel\\plugincore.cpp",
+              "RelativeToolTip": "..\\..\\Volume\\PluginKernel\\plugincore.cpp",
+              "ViewState": "AQIAAJYAAAAAAAAAAAAowJwAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-08T21:40:44.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "plugincore.h",
+              "DocumentMoniker": "C:\\Users\\RichardsonJ\\Documents\\Python Scripts\\AudioEffectPlugins\\SimpleHPF\\PluginKernel\\plugincore.h",
+              "RelativeDocumentMoniker": "..\\PluginKernel\\plugincore.h",
+              "ToolTip": "C:\\Users\\RichardsonJ\\Documents\\Python Scripts\\AudioEffectPlugins\\SimpleHPF\\PluginKernel\\plugincore.h",
+              "RelativeToolTip": "..\\PluginKernel\\plugincore.h",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAAwH8AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-08T21:36:19.104Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -23,7 +54,7 @@
               "RelativeDocumentMoniker": "..\\PluginKernel\\plugincore.cpp",
               "ToolTip": "C:\\Users\\RichardsonJ\\Documents\\Python Scripts\\AudioEffectPlugins\\SimpleHPF\\PluginKernel\\plugincore.cpp",
               "RelativeToolTip": "..\\PluginKernel\\plugincore.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAgAAAA",
+              "ViewState": "AQIAAN0AAAAAAAAAAAAQwN8AAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-04T19:01:31.063Z",
               "EditorCaption": ""

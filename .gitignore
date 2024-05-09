@@ -45,3 +45,17 @@
 # Visual Studio files
 *.ipch
 *.vsidx
+
+# Visual Studio database files
+*.sdf
+*.opensdf
+*.db
+*.db-shm
+*.db-wal
+
+# XML Cache files
+*/xmlcache/*
+
+# Build files
+*/RAFX2 WinBuild/*
+*/RAFX2 WinBuild/.vs/*
